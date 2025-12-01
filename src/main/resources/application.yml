@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: webhook-runner
+
+server:
+  port: 8080
+
+logging:
+  level:
+    com.example.webhook_runner: INFO
+    org.springframework: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+
+app:
+  # Update these with your details
+  registration:
+    name: "Your Name"
+    regNo: "Your_Reg_Number"  # e.g., REG12347
+    email: "your.email@example.com"
+    
+  # API endpoints
+  api:
+    generate-webhook: "https://bfhldevapigw.healthrx.co.in/hiring/generateWebhook/JAVA"
+    test-webhook: "/hiring/testWebhook/JAVA"
+    
+  # Timeout settings
+  timeout:
+    connect: 5000
+    read: 10000
